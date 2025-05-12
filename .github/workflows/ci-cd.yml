@@ -27,8 +27,6 @@ jobs:
       - name: Run training with MLflow
         run: |
           python model_pipeline.py
-        env:
-          MLFLOW_TRACKING_URI: file:./mlruns
 
       # Sauvegarder les logs MLflow comme artefact
       - name: Upload MLflow logs
@@ -73,6 +71,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: test
+    permissions:
+      contents: write  # Ajouter cette ligne pour autoriser l'écriture
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
