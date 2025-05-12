@@ -1,0 +1,97 @@
+2025-05-10 20:10:08,953 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:10:09,422 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 20:10:09,508 - INFO - Starting model training
+2025-05-10 20:12:19,933 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:12:20,131 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 20:12:20,203 - INFO - Starting model training
+2025-05-10 20:22:18,959 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:52:16,488 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:52:16,981 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 20:52:17,035 - INFO - Starting model training
+2025-05-10 20:55:51,242 - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6dad3d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:55:55,567 - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6d8c200>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:56:05,330 - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6aecf80>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:56:21,411 - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6b0fa10>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:56:55,031 - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6b0fbc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:58:02,247 - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6c90230>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:00:04,704 - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6c903b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:11:49,000 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:11:51,575 - INFO - Début de l'exécution de main()
+2025-05-10 21:11:51,576 - INFO - Arguments reçus : Namespace(data='churn-bigml-80.csv', prepare=False, train=True, evaluate=True, save='churn_model.joblib', model=None, load=False)
+2025-05-10 21:11:51,576 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 21:11:51,576 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 65, in main
+    X_train, X_test, y_train, y_test = prepare_data(data_path)
+
+2025-05-10 21:11:52,792 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 21:11:52,792 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 67, in main
+    X_res, y_res = balance_data(X_train, y_train)
+
+2025-05-10 21:11:52,863 - INFO - Starting model training
+2025-05-10 21:11:52,863 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 69, in main
+    model = train_model(X_res, y_res)
+
+2025-05-10 21:11:54,045 - INFO - System Metrics - CPU: 0.0%, Memory: 19.0%
+2025-05-10 21:12:12,444 - INFO - System Metrics - CPU: 0.0%, Memory: 38.3%
+2025-05-10 21:12:33,879 - INFO - System Metrics - CPU: 0.0%, Memory: 39.2%
+2025-05-10 21:12:59,373 - INFO - Training completed in 66.49 seconds
+2025-05-10 21:12:59,389 - INFO - Starting model evaluation
+2025-05-10 21:13:00,650 - INFO - System Metrics - CPU: 0.0%, Memory: 39.7%
+2025-05-10 21:13:00,650 - INFO - Plotting ROC curve for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:13:00,726 - INFO - Plotting confusion matrix for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:13:00,791 - INFO - Plotting precision-recall curve for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:13:00,837 - INFO - Plotting prediction distribution for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:17:12,184 - ERROR - Erreur : The following failures occurred while downloading one or more artifacts from http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/b9fd144f44284f33b73d4c1180c0e69c/artifacts:
+##### File model #####
+API request to http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/b9fd144f44284f33b73d4c1180c0e69c/artifacts/model failed with exception HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/2.0/mlflow-artifacts/artifacts/1/b9fd144f44284f33b73d4c1180c0e69c/artifacts/model (Caused by ResponseError('too many 500 error responses'))
+2025-05-10 21:17:12,184 - INFO - Fin de l'exécution de main()
+2025-05-10 21:38:15,854 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:38:15,863 - WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f050da53c80>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:38:20,356 - WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce663230>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:38:29,195 - WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce4e55b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:38:45,442 - WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce4e49b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:39:17,901 - WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce4e6960>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:42:24,862 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:42:24,874 - INFO - Début de l'exécution de main()
+2025-05-10 21:42:24,874 - INFO - Arguments reçus : Namespace(data='churn-bigml-80.csv', prepare=False, train=True, evaluate=True, save='churn_model.joblib', model=None, load=False)
+2025-05-10 21:42:24,874 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 21:42:24,875 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 75, in main
+    X_train, X_test, y_train, y_test = prepare_data(data_path)
+
+2025-05-10 21:42:24,900 - INFO - Labels uniques dans Churn: [0 1]
+2025-05-10 21:42:25,415 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 21:42:25,416 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 77, in main
+    X_res, y_res = balance_data(X_train, y_train)
+
+2025-05-10 21:42:25,520 - INFO - Labels uniques après équilibrage: [0 1]
+2025-05-10 21:42:25,521 - INFO - Starting model training
+2025-05-10 21:42:25,521 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 79, in main
+    model = train_model(X_res, y_res)
+
+2025-05-10 21:42:26,610 - INFO - System Metrics - CPU: 0.0%, Memory: 19.2%
+2025-05-10 21:42:33,660 - INFO - System Metrics - CPU: 0.1%, Memory: 37.2%
+2025-05-10 21:42:42,618 - INFO - System Metrics - CPU: 0.1%, Memory: 37.7%
+2025-05-10 21:42:55,733 - INFO - Training completed in 30.18 seconds
+2025-05-10 21:42:55,751 - INFO - Starting model evaluation
+2025-05-10 21:42:55,752 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 83, in main
+    evaluate_model(model, X_test, y_test)
+
+2025-05-10 21:42:56,979 - INFO - System Metrics - CPU: 0.0%, Memory: 38.4%
+2025-05-10 21:42:56,979 - INFO - Plotting ROC curve for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:57,064 - INFO - Plotting confusion matrix for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:57,131 - INFO - Plotting precision-recall curve for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:57,172 - INFO - Plotting prediction distribution for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:58,137 - INFO - No production model available: No versions of model with name 'ChurnPredictionModel' and stage 'Production' found

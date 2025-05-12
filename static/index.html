@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction de Churn Télécom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
+        <h1 class="text-2xl font-bold mb-6 text-center">Prédiction de Churn Télécom</h1>
+        <form id="predict-form" class="grid grid-cols-2 gap-4">
+            <!-- Champs pour les 17 features -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Account length</label>
+                <input type="number" step="0.1" name="feature0" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">International plan (0/1)</label>
+                <input type="number" step="1" min="0" max="1" name="feature1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Voice mail plan (0/1)</label>
+                <input type="number" step="1" min="0" max="1" name="feature2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Number vmail messages</label>
+                <input type="number" step="0.1" name="feature3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total day minutes</label>
+                <input type="number" step="0.1" name="feature4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total day calls</label>
+                <input type="number" step="0.1" name="feature5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total day charge</label>
+                <input type="number" step="0.1" name="feature6" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total eve minutes</label>
+                <input type="number" step="0.1" name="feature7" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total eve calls</label>
+                <input type="number" step="0.1" name="feature8" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total eve charge</label>
+                <input type="number" step="0.1" name="feature9" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total night minutes</label>
+                <input type="number" step="0.1" name="feature10" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total night calls</label>
+                <input type="number" step="0.1" name="feature11" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total night charge</label>
+                <input type="number" step="0.1" name="feature12" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total intl minutes</label>
+                <input type="number" step="0.1" name="feature13" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total intl calls</label>
+                <input type="number" step="0.1" name="feature14" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Total intl charge</label>
+                <input type="number" step="0.1" name="feature15" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Customer service calls</label>
+                <input type="number" step="0.1" name="feature16" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+            </div>
+            <div class="col-span-2">
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">
+                    Prédire
+                </button>
+            </div>
+        </form>
+        <div id="result" class="mt-4 text-center"></div>
+    </div>
+
+    <script>
+        document.getElementById('predict-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const features = [];
+            for (let i = 0; i < 17; i++) {
+                features.push(parseFloat(formData.get(`feature${i}`)));
+            }
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ features })
+                });
+                const data = await response.json();
+                const resultDiv = document.getElementById('result');
+                if (response.ok) {
+                    resultDiv.innerHTML = `<p class="text-green-600">Prédiction : ${data.prediction === 1 ? 'Churn' : 'Non-Churn'}</p>`;
+                } else {
+                    resultDiv.innerHTML = `<p class="text-red-600">Erreur : ${data.detail}</p>`;
+                }
+            } catch (error) {
+                document.getElementById('result').innerHTML = `<p class="text-red-600">Erreur réseau : ${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>

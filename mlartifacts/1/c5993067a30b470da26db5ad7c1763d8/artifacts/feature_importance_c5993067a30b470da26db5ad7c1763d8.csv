@@ -1,0 +1,18 @@
+feature,importance
+Customer service calls,0.1620712700858835
+International plan,0.1339872043807729
+Total day minutes,0.13133427197461095
+Total day charge,0.11734604540746302
+Total intl calls,0.07814298948384485
+Total eve minutes,0.049064713059905694
+Total eve charge,0.0488087456414742
+Total intl charge,0.03945534697568399
+Total intl minutes,0.03934723141230751
+Total night charge,0.030907210818142457
+Total night minutes,0.030649292336013007
+Number vmail messages,0.02895673911794111
+Total day calls,0.023353733250751095
+Total night calls,0.022999639670800064
+Total eve calls,0.022365248572468098
+Account length,0.021586071602027697
+Voice mail plan,0.01962424620990978

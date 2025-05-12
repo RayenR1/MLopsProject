@@ -1,0 +1,785 @@
+2025-05-10 20:10:08,953 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:10:09,422 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 20:10:09,508 - INFO - Starting model training
+2025-05-10 20:12:19,933 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:12:20,131 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 20:12:20,203 - INFO - Starting model training
+2025-05-10 20:22:18,959 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:52:16,488 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 20:52:16,981 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 20:52:17,035 - INFO - Starting model training
+2025-05-10 20:55:51,242 - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6dad3d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:55:55,567 - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6d8c200>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:56:05,330 - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6aecf80>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:56:21,411 - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6b0fa10>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:56:55,031 - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6b0fbc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 20:58:02,247 - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6c90230>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:00:04,704 - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f56d6c903b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:11:49,000 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:11:51,575 - INFO - Début de l'exécution de main()
+2025-05-10 21:11:51,576 - INFO - Arguments reçus : Namespace(data='churn-bigml-80.csv', prepare=False, train=True, evaluate=True, save='churn_model.joblib', model=None, load=False)
+2025-05-10 21:11:51,576 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 21:11:51,576 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 65, in main
+    X_train, X_test, y_train, y_test = prepare_data(data_path)
+
+2025-05-10 21:11:52,792 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 21:11:52,792 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 67, in main
+    X_res, y_res = balance_data(X_train, y_train)
+
+2025-05-10 21:11:52,863 - INFO - Starting model training
+2025-05-10 21:11:52,863 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 69, in main
+    model = train_model(X_res, y_res)
+
+2025-05-10 21:11:54,045 - INFO - System Metrics - CPU: 0.0%, Memory: 19.0%
+2025-05-10 21:12:12,444 - INFO - System Metrics - CPU: 0.0%, Memory: 38.3%
+2025-05-10 21:12:33,879 - INFO - System Metrics - CPU: 0.0%, Memory: 39.2%
+2025-05-10 21:12:59,373 - INFO - Training completed in 66.49 seconds
+2025-05-10 21:12:59,389 - INFO - Starting model evaluation
+2025-05-10 21:13:00,650 - INFO - System Metrics - CPU: 0.0%, Memory: 39.7%
+2025-05-10 21:13:00,650 - INFO - Plotting ROC curve for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:13:00,726 - INFO - Plotting confusion matrix for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:13:00,791 - INFO - Plotting precision-recall curve for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:13:00,837 - INFO - Plotting prediction distribution for run b9fd144f44284f33b73d4c1180c0e69c
+2025-05-10 21:17:12,184 - ERROR - Erreur : The following failures occurred while downloading one or more artifacts from http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/b9fd144f44284f33b73d4c1180c0e69c/artifacts:
+##### File model #####
+API request to http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/b9fd144f44284f33b73d4c1180c0e69c/artifacts/model failed with exception HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/2.0/mlflow-artifacts/artifacts/1/b9fd144f44284f33b73d4c1180c0e69c/artifacts/model (Caused by ResponseError('too many 500 error responses'))
+2025-05-10 21:17:12,184 - INFO - Fin de l'exécution de main()
+2025-05-10 21:38:15,854 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:38:15,863 - WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f050da53c80>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:38:20,356 - WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce663230>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:38:29,195 - WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce4e55b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:38:45,442 - WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce4e49b0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:39:17,901 - WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f04ce4e6960>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-10 21:42:24,862 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:42:24,874 - INFO - Début de l'exécution de main()
+2025-05-10 21:42:24,874 - INFO - Arguments reçus : Namespace(data='churn-bigml-80.csv', prepare=False, train=True, evaluate=True, save='churn_model.joblib', model=None, load=False)
+2025-05-10 21:42:24,874 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 21:42:24,875 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 75, in main
+    X_train, X_test, y_train, y_test = prepare_data(data_path)
+
+2025-05-10 21:42:24,900 - INFO - Labels uniques dans Churn: [0 1]
+2025-05-10 21:42:25,415 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 21:42:25,416 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 77, in main
+    X_res, y_res = balance_data(X_train, y_train)
+
+2025-05-10 21:42:25,520 - INFO - Labels uniques après équilibrage: [0 1]
+2025-05-10 21:42:25,521 - INFO - Starting model training
+2025-05-10 21:42:25,521 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 79, in main
+    model = train_model(X_res, y_res)
+
+2025-05-10 21:42:26,610 - INFO - System Metrics - CPU: 0.0%, Memory: 19.2%
+2025-05-10 21:42:33,660 - INFO - System Metrics - CPU: 0.1%, Memory: 37.2%
+2025-05-10 21:42:42,618 - INFO - System Metrics - CPU: 0.1%, Memory: 37.7%
+2025-05-10 21:42:55,733 - INFO - Training completed in 30.18 seconds
+2025-05-10 21:42:55,751 - INFO - Starting model evaluation
+2025-05-10 21:42:55,752 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 114, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 83, in main
+    evaluate_model(model, X_test, y_test)
+
+2025-05-10 21:42:56,979 - INFO - System Metrics - CPU: 0.0%, Memory: 38.4%
+2025-05-10 21:42:56,979 - INFO - Plotting ROC curve for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:57,064 - INFO - Plotting confusion matrix for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:57,131 - INFO - Plotting precision-recall curve for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:57,172 - INFO - Plotting prediction distribution for run 70cfeffa12d444daa68dd90bfd6954f8
+2025-05-10 21:42:58,137 - INFO - No production model available: No versions of model with name 'ChurnPredictionModel' and stage 'Production' found
+2025-05-10 21:42:58,188 - INFO - Evaluation completed
+2025-05-10 21:42:58,207 - INFO - Saving model to churn_model.joblib
+2025-05-10 21:42:58,298 - INFO - Fin de l'exécution de main()
+2025-05-10 21:47:35,710 - INFO - Module model_pipeline.py chargé
+2025-05-10 21:47:35,723 - INFO - Début de l'exécution de main()
+2025-05-10 21:47:35,723 - INFO - Arguments reçus : Namespace(data='churn-bigml-80.csv', prepare=False, train=True, evaluate=True, save='churn_model.joblib', model=None, load=False)
+2025-05-10 21:47:35,723 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-10 21:47:35,724 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 65, in main
+    X_train, X_test, y_train, y_test = prepare_data(data_path)
+
+2025-05-10 21:47:36,243 - INFO - Balancing data with SMOTE and ENN
+2025-05-10 21:47:36,244 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 67, in main
+    X_res, y_res = balance_data(X_train, y_train)
+
+2025-05-10 21:47:36,309 - INFO - Starting model training
+2025-05-10 21:47:36,309 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 69, in main
+    model = train_model(X_res, y_res)
+
+2025-05-10 21:47:37,642 - INFO - System Metrics - CPU: 0.0%, Memory: 19.3%
+2025-05-10 21:47:51,546 - INFO - System Metrics - CPU: 0.0%, Memory: 37.5%
+2025-05-10 21:48:08,495 - INFO - System Metrics - CPU: 0.0%, Memory: 38.2%
+2025-05-10 21:48:29,226 - INFO - Training completed in 52.89 seconds
+2025-05-10 21:48:29,242 - INFO - Starting model evaluation
+2025-05-10 21:48:30,456 - INFO - System Metrics - CPU: 0.0%, Memory: 38.7%
+2025-05-10 21:48:30,456 - INFO - Plotting ROC curve for run c5993067a30b470da26db5ad7c1763d8
+2025-05-10 21:48:30,533 - INFO - Plotting confusion matrix for run c5993067a30b470da26db5ad7c1763d8
+2025-05-10 21:48:30,595 - INFO - Plotting precision-recall curve for run c5993067a30b470da26db5ad7c1763d8
+2025-05-10 21:48:30,636 - INFO - Plotting prediction distribution for run c5993067a30b470da26db5ad7c1763d8
+2025-05-10 21:49:33,998 - ERROR - Erreur : The following failures occurred while downloading one or more artifacts from http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/c5993067a30b470da26db5ad7c1763d8/artifacts:
+##### File model #####
+API request to http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/c5993067a30b470da26db5ad7c1763d8/artifacts/model failed with exception HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/2.0/mlflow-artifacts/artifacts/1/c5993067a30b470da26db5ad7c1763d8/artifacts/model (Caused by ResponseError('too many 500 error responses'))
+2025-05-10 21:49:33,998 - INFO - Fin de l'exécution de main()
+2025-05-12 20:48:19,404 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.001s]
+2025-05-12 20:48:19,404 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2025-05-12 20:48:19,404 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1c082aee40>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1c082aee40>: Failed to establish a new connection: [Errno 111] Connection refused)
+2025-05-12 20:48:19,409 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.000s]
+2025-05-12 20:48:19,409 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2025-05-12 20:48:19,410 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1c0838d7c0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1c0838d7c0>: Failed to establish a new connection: [Errno 111] Connection refused)
+2025-05-12 20:48:19,410 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.000s]
+2025-05-12 20:48:19,410 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2025-05-12 20:48:19,410 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f1c082af680>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f1c082af680>: Failed to establish a new connection: [Errno 111] Connection refused)
+2025-05-12 20:48:19,411 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.000s]
+2025-05-12 20:48:19,411 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2025-05-12 20:48:19,411 - ERROR - Connexion à Elasticsearch échouée
+2025-05-12 20:48:54,896 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.001s]
+2025-05-12 20:48:54,897 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2025-05-12 20:48:54,897 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3a7006a8a0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3a7006a8a0>: Failed to establish a new connection: [Errno 111] Connection refused)
+2025-05-12 20:48:54,899 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.000s]
+2025-05-12 20:48:54,899 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2025-05-12 20:48:54,899 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3a7051aba0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3a7051aba0>: Failed to establish a new connection: [Errno 111] Connection refused)
+2025-05-12 20:48:54,900 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.000s]
+2025-05-12 20:48:54,900 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2025-05-12 20:48:54,900 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/usr/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f3a7006a930>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x7f3a7006a930>: Failed to establish a new connection: [Errno 111] Connection refused)
+2025-05-12 20:48:54,901 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.000s]
+2025-05-12 20:48:54,901 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2025-05-12 20:48:54,901 - ERROR - Connexion à Elasticsearch échouée
+2025-05-12 20:49:40,624 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.003s]
+2025-05-12 20:49:40,624 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 1 times in a row, putting on 1 second timeout
+2025-05-12 20:49:40,624 - WARNING - Retrying request after failure (attempt 0 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ProtocolError(('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2025-05-12 20:49:40,628 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.001s]
+2025-05-12 20:49:40,628 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 2 times in a row, putting on 2 second timeout
+2025-05-12 20:49:40,628 - WARNING - Retrying request after failure (attempt 1 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ProtocolError(('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2025-05-12 20:49:40,630 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.001s]
+2025-05-12 20:49:40,630 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 3 times in a row, putting on 4 second timeout
+2025-05-12 20:49:40,630 - WARNING - Retrying request after failure (attempt 2 of 3)
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 167, in perform_request
+    response = self.pool.urlopen(
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 449, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/usr/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_transport.py", line 342, in perform_request
+    resp = node.perform_request(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ray/Rayen-4ds-10/venv/lib/python3.12/site-packages/elastic_transport/_node/_http_urllib3.py", line 202, in perform_request
+    raise err from e
+elastic_transport.ConnectionError: Connection error caused by: ProtocolError(('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))
+2025-05-12 20:49:40,631 - INFO - HEAD http://localhost:9200/ [status:N/A duration:0.001s]
+2025-05-12 20:49:40,631 - WARNING - Node <Urllib3HttpNode(http://localhost:9200)> has failed for 4 times in a row, putting on 8 second timeout
+2025-05-12 20:49:40,631 - ERROR - Connexion à Elasticsearch échouée
+2025-05-12 21:03:07,293 - INFO - HEAD http://127.0.0.1:9200/ [status:200 duration:0.007s]
+2025-05-12 21:03:07,293 - INFO - Connexion à Elasticsearch réussie
+2025-05-12 21:03:07,295 - INFO - HEAD http://127.0.0.1:9200/ [status:200 duration:0.001s]
+2025-05-12 21:03:07,546 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.252s]
+2025-05-12 21:03:07,295 - INFO - Module model_pipeline.py chargé
+2025-05-12 21:03:07,555 - WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f22eb538e30>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:03:12,275 - WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f22eaec4ef0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:03:20,957 - WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f22eaec5970>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:03:39,459 - WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f22eaec4530>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:04:13,301 - WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f22eaec6000>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:05:48,897 - INFO - HEAD http://127.0.0.1:9200/ [status:200 duration:0.002s]
+2025-05-12 21:05:48,897 - INFO - Connexion à Elasticsearch réussie
+2025-05-12 21:05:48,898 - INFO - HEAD http://127.0.0.1:9200/ [status:200 duration:0.001s]
+2025-05-12 21:05:48,926 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.028s]
+2025-05-12 21:05:48,898 - INFO - Module model_pipeline.py chargé
+2025-05-12 21:05:48,932 - WARNING - Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f25e739bc50>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:05:53,772 - WARNING - Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f25e78b0bc0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:06:02,689 - WARNING - Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f25e73c0740>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:06:21,307 - WARNING - Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f25e73c0050>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:06:55,411 - WARNING - Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f25e73c1a60>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=Churn_Prediction_Experiment
+2025-05-12 21:15:15,706 - INFO - HEAD http://127.0.0.1:9200/ [status:200 duration:0.003s]
+2025-05-12 21:15:15,706 - INFO - Connexion à Elasticsearch réussie
+2025-05-12 21:15:15,707 - INFO - HEAD http://127.0.0.1:9200/ [status:200 duration:0.001s]
+2025-05-12 21:15:15,727 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.020s]
+2025-05-12 21:15:15,707 - INFO - Module model_pipeline.py chargé
+2025-05-12 21:15:16,017 - INFO - Début de l'exécution de main()
+2025-05-12 21:15:16,017 - INFO - Arguments reçus : Namespace(data='churn-bigml-80.csv', prepare=False, train=True, evaluate=True, save='churn_model.joblib', model=None, load=False)
+2025-05-12 21:15:16,026 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:15:16,018 - INFO - Preparing data from data/churn-bigml-80.csv
+2025-05-12 21:15:16,032 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.006s]
+2025-05-12 21:15:16,026 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 65, in main
+    X_train, X_test, y_train, y_test = prepare_data(data_path)
+
+2025-05-12 21:15:16,057 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:15:16,050 - INFO - Labels uniques dans Churn: [0 1]
+2025-05-12 21:15:16,996 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.008s]
+2025-05-12 21:15:16,988 - INFO - Balancing data with SMOTE and ENN
+2025-05-12 21:15:17,003 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:15:16,996 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 67, in main
+    X_res, y_res = balance_data(X_train, y_train)
+
+2025-05-12 21:15:17,092 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.009s]
+2025-05-12 21:15:17,083 - INFO - Labels uniques après équilibrage: [0 1]
+2025-05-12 21:15:17,100 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:15:17,093 - INFO - Starting model training
+2025-05-12 21:15:17,107 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:15:17,100 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 69, in main
+    model = train_model(X_res, y_res)
+
+2025-05-12 21:15:18,506 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.006s]
+2025-05-12 21:15:18,499 - INFO - System Metrics - CPU: 1.0%, Memory: 35.9%
+2025-05-12 21:15:25,987 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.009s]
+2025-05-12 21:15:25,977 - INFO - System Metrics - CPU: 2.0%, Memory: 54.0%
+2025-05-12 21:15:35,958 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.032s]
+2025-05-12 21:15:35,925 - INFO - System Metrics - CPU: 0.5%, Memory: 54.6%
+2025-05-12 21:15:50,898 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.061s]
+2025-05-12 21:15:50,838 - INFO - Training completed in 33.45 seconds
+2025-05-12 21:15:51,042 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.069s]
+2025-05-12 21:15:50,973 - INFO - Starting model evaluation
+2025-05-12 21:15:51,138 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.095s]
+2025-05-12 21:15:51,043 - INFO - Call stack:   File "/home/ray/Rayen-4ds-10/main.py", line 104, in <module>
+    main()
+  File "/home/ray/Rayen-4ds-10/main.py", line 73, in main
+    evaluate_model(model, X_test, y_test)
+
+2025-05-12 21:15:53,265 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.069s]
+2025-05-12 21:15:53,196 - INFO - System Metrics - CPU: 0.4%, Memory: 55.2%
+2025-05-12 21:15:53,353 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.087s]
+2025-05-12 21:15:53,266 - INFO - Plotting ROC curve for run 9980df8d611e4375afa90c723d0627b8
+2025-05-12 21:15:53,477 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.023s]
+2025-05-12 21:15:53,454 - INFO - Plotting confusion matrix for run 9980df8d611e4375afa90c723d0627b8
+2025-05-12 21:15:53,566 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.017s]
+2025-05-12 21:15:53,549 - INFO - Plotting precision-recall curve for run 9980df8d611e4375afa90c723d0627b8
+2025-05-12 21:15:53,617 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.009s]
+2025-05-12 21:15:53,609 - INFO - Plotting prediction distribution for run 9980df8d611e4375afa90c723d0627b8
+2025-05-12 21:17:02,648 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.008s]
+2025-05-12 21:17:02,640 - ERROR - Erreur lors de mlflow.evaluate: The following failures occurred while downloading one or more artifacts from http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/9980df8d611e4375afa90c723d0627b8/artifacts:
+##### File model #####
+API request to http://127.0.0.1:5000/api/2.0/mlflow-artifacts/artifacts/1/9980df8d611e4375afa90c723d0627b8/artifacts/model failed with exception HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/2.0/mlflow-artifacts/artifacts/1/9980df8d611e4375afa90c723d0627b8/artifacts/model (Caused by ResponseError('too many 500 error responses'))
+2025-05-12 21:17:02,663 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.008s]
+2025-05-12 21:17:02,655 - INFO - No production model available: No versions of model with name 'ChurnPredictionModel' and stage 'Production' found
+2025-05-12 21:17:02,726 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:17:02,719 - INFO - Evaluation completed
+2025-05-12 21:17:02,751 - INFO - POST http://127.0.0.1:9200/mlflow-metrics/_doc [status:201 duration:0.007s]
+2025-05-12 21:17:02,744 - INFO - Saving model to churn_model.joblib
+2025-05-12 21:17:02,868 - INFO - Fin de l'exécution de main()
