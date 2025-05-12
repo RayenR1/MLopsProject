@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  # Étape 1111 : Entraînement du modèle avec MLflow
+  # Étape 1 : Entraînement du modèle avec MLflow
   train:
     runs-on: ubuntu-latest
     steps:
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     permissions:
-      contents: write  # Ajouter cette ligne pour autoriser l'écriture
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -100,7 +100,10 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rayen_nom_4ds10_mlops:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rayen_nom_4ds10_mlops:latest  # Correctement formaté
+          # Ajouter une vérification explicite pour éviter les erreurs
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/rayen_nom_4ds10_mlops:latest
 
       # Vérification du conteneur déployé
       - name: Test deployed container
