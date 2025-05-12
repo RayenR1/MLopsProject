@@ -457,7 +457,7 @@ def load_model(filename="models/churn_model.joblib"):
 
 if __name__ == "__main__":
     # Charger les données
-    X_train, X_test, y_train, y_test = prepare_data("data/Churn.csv")
+    X_train, X_test, y_train, y_test = prepare_data("data/churn.csv")
 
     # Équilibrer les données
     X_train_balanced, y_train_balanced = balance_data(X_train, y_train)
