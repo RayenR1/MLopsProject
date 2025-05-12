@@ -100,8 +100,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/rayen_nom_4ds10_mlops:latest
+          tags: rayenr1/rayen_nom_4ds10_mlops:latest
 
       # Vérification du conteneur déployé
       - name: Test deployed container
