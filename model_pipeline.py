@@ -90,8 +90,16 @@ else:
 
 logger.info("Module model_pipeline.py chargé")
 
-# Configurer MLflow
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
+# Configurer MLflow en fonction de l'environnement
+if IS_GITHUB_ACTIONS:
+    # Dans GitHub Actions, utiliser un backend local (file-based)
+    mlflow.set_tracking_uri("file:./mlruns")
+    logger.info("MLflow configuré avec backend local (file:./mlruns) dans GitHub Actions")
+else:
+    # Localement, utiliser le serveur MLflow sur http://127.0.0.1:5000
+    mlflow.set_tracking_uri("http://127.0.0.1:5000")
+    logger.info("MLflow configuré avec serveur (http://127.0.0.1:5000) pour exécution locale")
+
 mlflow.set_experiment("Churn_Prediction_Experiment")
 
 def plot_roc_curve(y_true, y_scores, run_id):
@@ -151,7 +159,7 @@ def log_system_metrics():
     memory_usage = psutil.virtual_memory().percent
     mlflow.log_metric("cpu_usage_percent", cpu_usage)
     mlflow.log_metric("memory_usage_percent", memory_usage)
-    logger.info(f"System Metrics - CPU: {cpu_usage}%, Memory: {memory_usage}")
+    logger.info(f"System Metrics - CPU: {cpu_usage}%, Memory: {memory_usage}%")
 
 def prepare_data(filepath, test_size=0.2):
     logger.info(f"Preparing data from {filepath}")
