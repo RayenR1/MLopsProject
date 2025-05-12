@@ -37,49 +37,56 @@ logging.basicConfig(level=logging.INFO, filename="training.log", filemode="a",
                     format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
-# Initialiser Elasticsearch avec des tentatives
+# Détecter si le code s'exécute dans GitHub Actions
+IS_GITHUB_ACTIONS = os.getenv("GITHUB_ACTIONS", "false").lower() == "true"
+
+# Initialiser Elasticsearch avec des tentatives (uniquement si pas dans GitHub Actions)
 es = None
 max_attempts = 10
 attempt = 1
-while attempt <= max_attempts:
-    try:
-        es = Elasticsearch("http://127.0.0.1:9200")  # Utiliser 127.0.0.1 au lieu de localhost
-        if es.ping():
-            logger.info("Connexion à Elasticsearch réussie")
-            break
-        else:
-            logger.warning(f"Tentative {attempt}/{max_attempts} : Elasticsearch non prêt")
-    except Exception as e:
-        logger.warning(f"Tentative {attempt}/{max_attempts} : Erreur de connexion - {e}")
-    time.sleep(5)  # Attendre 5 secondes avant de réessayer
-    attempt += 1
-
-if es is None or not es.ping():
-    logger.error("Connexion à Elasticsearch échouée après plusieurs tentatives")
-    raise ConnectionError("Impossible de se connecter à Elasticsearch")
-
-# Configurer un handler pour envoyer les logs à Elasticsearch
-log_queue = queue.Queue()
-es_handler = QueueHandler(log_queue)
-
-class ElasticsearchHandler(logging.Handler):
-    def emit(self, record):
-        log_entry = self.format(record)
+if not IS_GITHUB_ACTIONS:
+    while attempt <= max_attempts:
         try:
-            es.index(index="mlflow-metrics", body={
-                "timestamp": record.created,
-                "level": record.levelname,
-                "message": log_entry,
-                "module": record.module,
-                "function": record.funcName,
-                "line": record.lineno
-            })
+            es = Elasticsearch("http://127.0.0.1:9200")  # Utiliser 127.0.0.1 au lieu de localhost
+            if es.ping():
+                logger.info("Connexion à Elasticsearch réussie")
+                break
+            else:
+                logger.warning(f"Tentative {attempt}/{max_attempts} : Elasticsearch non prêt")
         except Exception as e:
-            logger.error(f"Erreur lors de l'envoi des logs à Elasticsearch : {e}")
+            logger.warning(f"Tentative {attempt}/{max_attempts} : Erreur de connexion - {e}")
+        time.sleep(5)  # Attendre 5 secondes avant de réessayer
+        attempt += 1
 
-es_handler = ElasticsearchHandler()
-es_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
-logger.addHandler(es_handler)
+    if es is None or not es.ping():
+        logger.error("Connexion à Elasticsearch échouée après plusieurs tentatives")
+        raise ConnectionError("Impossible de se connecter à Elasticsearch")
+else:
+    logger.info("Exécution dans GitHub Actions : Elasticsearch désactivé")
+
+# Configurer un handler pour envoyer les logs à Elasticsearch (uniquement si es est disponible)
+log_queue = queue.Queue()
+if es:
+    class ElasticsearchHandler(logging.Handler):
+        def emit(self, record):
+            log_entry = self.format(record)
+            try:
+                es.index(index="mlflow-metrics", body={
+                    "timestamp": record.created,
+                    "level": record.levelname,
+                    "message": log_entry,
+                    "module": record.module,
+                    "function": record.funcName,
+                    "line": record.lineno
+                })
+            except Exception as e:
+                logger.error(f"Erreur lors de l'envoi des logs à Elasticsearch : {e}")
+
+    es_handler = ElasticsearchHandler()
+    es_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    logger.addHandler(es_handler)
+else:
+    logger.info("Elasticsearch non disponible : logs ne seront pas envoyés à Elasticsearch")
 
 logger.info("Module model_pipeline.py chargé")
 
@@ -144,7 +151,7 @@ def log_system_metrics():
     memory_usage = psutil.virtual_memory().percent
     mlflow.log_metric("cpu_usage_percent", cpu_usage)
     mlflow.log_metric("memory_usage_percent", memory_usage)
-    logger.info(f"System Metrics - CPU: {cpu_usage}%, Memory: {memory_usage}%")
+    logger.info(f"System Metrics - CPU: {cpu_usage}%, Memory: {memory_usage}")
 
 def prepare_data(filepath, test_size=0.2):
     logger.info(f"Preparing data from {filepath}")
@@ -276,7 +283,7 @@ def train_model(X_train, y_train):
             scoring = 'f1' if len(np.unique(y_train)) > 1 else 'accuracy'
             if scoring == 'accuracy':
                 logger.warning("Seule une classe présente dans y_train, passage à scoring='accuracy'")
-            
+
             train_sizes, train_scores, val_scores = learning_curve(
                 model, X_train, y_train, cv=5, scoring=scoring, n_jobs=-1
             )
@@ -439,3 +446,19 @@ def load_model(filename="models/churn_model.joblib"):
     except FileNotFoundError:
         logger.error(f"Model file {filename} not found")
         raise FileNotFoundError(f"Le fichier modèle {filename} n'existe pas")
+
+if __name__ == "__main__":
+    # Charger les données
+    X_train, X_test, y_train, y_test = prepare_data("Churn_Modelling.csv")
+
+    # Équilibrer les données
+    X_train_balanced, y_train_balanced = balance_data(X_train, y_train)
+
+    # Entraîner le modèle
+    model = train_model(X_train_balanced, y_train_balanced)
+
+    # Évaluer le modèle
+    metrics = evaluate_model(model, X_test, y_test)
+
+    # Sauvegarder le modèle
+    save_model(model)
