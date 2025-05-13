@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  # Étape 1111 : Entraînement du modèle avec MLflow
+  # Étape 11112 : Entraînement du modèle avec MLflow
   train:
     runs-on: ubuntu-latest
     steps:
@@ -105,6 +105,6 @@ jobs:
       # Vérification du conteneur déployé
       - name: Test deployed container
         run: |
-          docker run -d -p 8000:8000 ${{ secrets.DOCKERHUB_USERNAME }}/rayen_nom_4ds10_mlops:latest
+          docker run -d -p 8000:8000 rayenr1/rayen_nom_4ds10_mlops:latest
           sleep 5
           curl http://localhost:8000/docs || echo "Deployment test failed"
